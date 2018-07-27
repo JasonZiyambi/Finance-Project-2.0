@@ -6,6 +6,6 @@
 
     Public NumofUsers As Integer = 0
     Public UserData(1000) As Record
-    Public filename As String = "User Data.txt"
+    Public filename As String = "User Data 2.txt"
 
 End Module
