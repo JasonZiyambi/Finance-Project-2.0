@@ -26,16 +26,16 @@
     Private Sub savetofile()
         Dim sep As String = ","
         Dim Nrecord As String = ";"
-        Dim File = My.Computer.FileSystem.OpenTextFileWriter(filename, False)   'open the file
-        For i As Integer = 0 To UserData.Length - 1   'loop through all the records
+        Dim File = My.Computer.FileSystem.OpenTextFileWriter(filename, False)
+        For i As Integer = 0 To UserData.Length - 1
             With UserData(i)
-                If .Username <> Nothing Then  'only save this student if not zero'd (deleted)
+                If .Username <> Nothing Then
                     Dim oneline As String = .Username + sep + .Password + Nrecord
-                    File.WriteLine(oneline)   'write the line to file
+                    File.Write(oneline)
                 End If
             End With
         Next
-        File.Close()    'remember to close the file when writing is finished
+        File.Close()
         MsgBox("Welcome!")
     End Sub
 

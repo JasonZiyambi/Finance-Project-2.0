@@ -32,7 +32,7 @@ Partial Class Goals
         '
         'cmdBack
         '
-        Me.cmdBack.Location = New System.Drawing.Point(188, 227)
+        Me.cmdBack.Location = New System.Drawing.Point(147, 245)
         Me.cmdBack.Name = "cmdBack"
         Me.cmdBack.Size = New System.Drawing.Size(100, 30)
         Me.cmdBack.TabIndex = 21
@@ -41,7 +41,7 @@ Partial Class Goals
         '
         'cmdsave
         '
-        Me.cmdsave.Location = New System.Drawing.Point(188, 182)
+        Me.cmdsave.Location = New System.Drawing.Point(147, 200)
         Me.cmdsave.Name = "cmdsave"
         Me.cmdsave.Size = New System.Drawing.Size(100, 30)
         Me.cmdsave.TabIndex = 20
@@ -52,7 +52,7 @@ Partial Class Goals
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(149, 123)
+        Me.Label2.Location = New System.Drawing.Point(108, 141)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(52, 18)
         Me.Label2.TabIndex = 19
@@ -62,7 +62,7 @@ Partial Class Goals
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(149, 79)
+        Me.Label1.Location = New System.Drawing.Point(108, 97)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(49, 18)
         Me.Label1.TabIndex = 18
@@ -70,14 +70,14 @@ Partial Class Goals
         '
         'txtPass
         '
-        Me.txtPass.Location = New System.Drawing.Point(207, 121)
+        Me.txtPass.Location = New System.Drawing.Point(166, 139)
         Me.txtPass.Name = "txtPass"
         Me.txtPass.Size = New System.Drawing.Size(100, 20)
         Me.txtPass.TabIndex = 17
         '
         'txtUserN
         '
-        Me.txtUserN.Location = New System.Drawing.Point(207, 81)
+        Me.txtUserN.Location = New System.Drawing.Point(166, 99)
         Me.txtUserN.Name = "txtUserN"
         Me.txtUserN.Size = New System.Drawing.Size(100, 20)
         Me.txtUserN.TabIndex = 16
@@ -86,7 +86,7 @@ Partial Class Goals
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(362, 354)
         Me.Controls.Add(Me.cmdBack)
         Me.Controls.Add(Me.cmdsave)
         Me.Controls.Add(Me.Label2)
