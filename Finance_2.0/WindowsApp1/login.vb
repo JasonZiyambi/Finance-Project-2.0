@@ -18,8 +18,7 @@
             End If
 
         Next
-        txtUserN.Text = Nothing
-        txtPass.Text = Nothing
+
         Console.Read()
     End Sub
 End Class

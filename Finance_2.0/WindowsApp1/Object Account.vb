@@ -1,7 +1,7 @@
 ﻿Module Object_Account
     Class Account
-        Public Goals As String
-        Public Prices As Double
+        '  Public Goals As String
+        ' Public Prices As Double
         Public RateofPay As Double
         Public HoursPerWeek As Double
         Public AmountOfWeeks As Integer
