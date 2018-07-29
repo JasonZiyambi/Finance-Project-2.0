@@ -1,4 +1,4 @@
-﻿Public Class Account
+﻿Public Class AccountDetails
     Private Sub CmdCTG_Click(sender As Object, e As EventArgs) Handles CmdCTG.Click
         Goals.Show()
         Me.Hide()
@@ -12,4 +12,5 @@
     Private Sub cmdSave_Click(sender As Object, e As EventArgs) Handles cmdSave.Click
 
     End Sub
+
 End Class

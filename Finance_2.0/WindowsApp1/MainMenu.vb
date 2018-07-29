@@ -5,7 +5,7 @@
     End Sub
 
     Private Sub CmdAccount_Click(sender As Object, e As EventArgs) Handles CmdAccount.Click
-        Account.Show()
+        AccountDetails.Show()
         Me.Hide()
     End Sub
 End Class

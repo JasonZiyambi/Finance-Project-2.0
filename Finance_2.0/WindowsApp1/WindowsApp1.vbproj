@@ -72,10 +72,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.Designer.vb">
-      <DependentUpon>Account.vb</DependentUpon>
+    <Compile Include="AccountDetails.Designer.vb">
+      <DependentUpon>AccountDetails.vb</DependentUpon>
     </Compile>
-    <Compile Include="Account.vb">
+    <Compile Include="AccountDetails.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Advisor.Designer.vb">
@@ -146,8 +146,8 @@
     <Compile Include="UserStructure.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Account.resx">
-      <DependentUpon>Account.vb</DependentUpon>
+    <EmbeddedResource Include="AccountDetails.resx">
+      <DependentUpon>AccountDetails.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Advisor.resx">
       <DependentUpon>Advisor.vb</DependentUpon>

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Account
+Partial Class AccountDetails
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -122,7 +122,7 @@ Partial Class Account
         Me.txtROP.Size = New System.Drawing.Size(100, 20)
         Me.txtROP.TabIndex = 11
         '
-        'Account
+        'AccountDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -137,7 +137,7 @@ Partial Class Account
         Me.Controls.Add(Me.txtAOW)
         Me.Controls.Add(Me.txtHPW)
         Me.Controls.Add(Me.txtROP)
-        Me.Name = "Account"
+        Me.Name = "AccountDetails"
         Me.Text = "Account"
         Me.ResumeLayout(False)
         Me.PerformLayout()

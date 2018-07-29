@@ -3,23 +3,23 @@
         FirstWelcomeMenu.Show()
         Me.Hide()
     End Sub
-
     Private Sub cmdLogin_Click(sender As Object, e As EventArgs) Handles cmdLogin.Click
-        For i = 0 To UserData.Length - 1
-            If txtUserN.Text = UserData(i).Username And txtPass.Text = UserData(i).Password Then
-                MsgBox("Welcome back " + txtUserN.Text)
-                MainMenu.Show()
-                Me.Hide()
-                Exit For
-            ElseIf txtUserN.Text <> UserData(i).Username And txtPass.Text = UserData(i).Password Then
-                MsgBox("Incorrect Username!")
-            ElseIf txtUserN.Text = UserData(i).Username And txtPass.Text <> UserData(i).Password Then
-                MsgBox("Incorrect Password!")
-            End If
-
-        Next
-        txtUserN.Text = Nothing
-        txtPass.Text = Nothing
-        Console.Read()
+        If txtUserN.Text <> Nothing AndAlso txtPass.Text <> Nothing Then
+            For i = 0 To UserData.Length - 1
+                If txtUserN.Text = UserData(i).Username And txtPass.Text = UserData(i).Password Then
+                    MsgBox("Welcome back " + txtUserN.Text)
+                    MainMenu.Show()
+                    Me.Hide()
+                    Exit For
+                ElseIf txtUserN.Text = UserData(i).Username And txtPass.Text <> UserData(i).Password Then
+                    MsgBox("Incorrect Password!")
+                    txtPass.Text = Nothing
+                    Exit For
+                ElseIf i = UserData.Length - 1 Then
+                    MsgBox("Incorrect Username!")
+                    txtUserN.Text = Nothing
+                End If
+            Next
+        End If
     End Sub
 End Class
