@@ -10,7 +10,8 @@
     End Sub
 
     Private Sub cmdSave_Click(sender As Object, e As EventArgs) Handles cmdSave.Click
-
+        FirstWelcomeMenu.setvalues(txtROP.Text, txtHPW.Text, txtAOW.Text)
+        MsgBox("Saved!")
     End Sub
 
 End Class
