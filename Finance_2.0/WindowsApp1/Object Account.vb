@@ -23,6 +23,10 @@
         Me.Expenditure = Expenditure
         Me.CurrentBalance = CurrentBalance
     End Sub
+    Public Sub New(ByVal Goals As String, ByVal Prices As Double)
+        Me.Goals = Goals
+        Me.Prices = Prices
+    End Sub
 #End Region
 #Region "Functions"
     Sub SetPassword(ByVal Password As String)
@@ -34,7 +38,6 @@
     Function CheckPassword(ByVal Password As String)
         If Me.Password = Password Then Return True Else Return False
     End Function
-
 
     Sub SetRateOfPay(ByVal ROP As Double)
         Me.RateofPay = ROP
@@ -48,8 +51,17 @@
     Function MonthlyIncome() As Double
         Return RateofPay * HoursPerWeek * AmountOfWeeks
     End Function
+    Sub SetGoal(ByVal Goal As String)
+        Me.Goals = Goal
+    End Sub
+    Sub setPrice(ByVal Price As Double)
+        Me.Prices = Price
+    End Sub
     Function RecordOutput()
         Return Me.Username & "," & Me.Password & "," & Me.RateofPay & "," & Me.HoursPerWeek & "," & Me.AmountOfWeeks & "," & Me.Expenditure & "," & Me.CurrentBalance & ";"
+    End Function
+    Function GoalOutput()
+        Return Me.Goals & "," & Me.Prices & ";"
     End Function
 #End Region
 End Class

@@ -11,6 +11,6 @@
 
     Public NumofUsers As Integer = 0
     Public UserData(1000) As Record
-    Public filename As String = "C:\Users\adams\Desktop\Data.txt"
-
+    Public filename As String = "User Data 2.txt"
+    Public filename2 As String = "Goals.txt"
 End Module

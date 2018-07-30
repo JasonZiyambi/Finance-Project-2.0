@@ -26,8 +26,8 @@ Partial Class Goals
         Me.cmdsave = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtPass = New System.Windows.Forms.TextBox()
-        Me.txtUserN = New System.Windows.Forms.TextBox()
+        Me.txtPrice = New System.Windows.Forms.TextBox()
+        Me.txtGoal = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'cmdBack
@@ -68,19 +68,19 @@ Partial Class Goals
         Me.Label1.TabIndex = 18
         Me.Label1.Text = "Goal:"
         '
-        'txtPass
+        'txtPrice
         '
-        Me.txtPass.Location = New System.Drawing.Point(166, 139)
-        Me.txtPass.Name = "txtPass"
-        Me.txtPass.Size = New System.Drawing.Size(100, 20)
-        Me.txtPass.TabIndex = 17
+        Me.txtPrice.Location = New System.Drawing.Point(166, 139)
+        Me.txtPrice.Name = "txtPrice"
+        Me.txtPrice.Size = New System.Drawing.Size(100, 20)
+        Me.txtPrice.TabIndex = 17
         '
-        'txtUserN
+        'txtGoal
         '
-        Me.txtUserN.Location = New System.Drawing.Point(166, 99)
-        Me.txtUserN.Name = "txtUserN"
-        Me.txtUserN.Size = New System.Drawing.Size(100, 20)
-        Me.txtUserN.TabIndex = 16
+        Me.txtGoal.Location = New System.Drawing.Point(166, 99)
+        Me.txtGoal.Name = "txtGoal"
+        Me.txtGoal.Size = New System.Drawing.Size(100, 20)
+        Me.txtGoal.TabIndex = 16
         '
         'Goals
         '
@@ -91,8 +91,8 @@ Partial Class Goals
         Me.Controls.Add(Me.cmdsave)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtPass)
-        Me.Controls.Add(Me.txtUserN)
+        Me.Controls.Add(Me.txtPrice)
+        Me.Controls.Add(Me.txtGoal)
         Me.Name = "Goals"
         Me.Text = "Goals"
         Me.ResumeLayout(False)
@@ -104,6 +104,6 @@ Partial Class Goals
     Friend WithEvents cmdsave As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtPass As TextBox
-    Friend WithEvents txtUserN As TextBox
+    Friend WithEvents txtPrice As TextBox
+    Friend WithEvents txtGoal As TextBox
 End Class

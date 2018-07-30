@@ -7,13 +7,13 @@
 
     Private Sub cmdCreateUser_Click(sender As Object, e As EventArgs) Handles cmdCreateUser.Click
         If txtPass.Text = txtConfirmP.Text Then
-            'With UserData(NumofUsers)    'Puts values from all textboxes into the record elements
+            'With UserData(NumofUsers)    
             '    .Username = txtUserN.Text
             '    .Password = txtPass.Text
             'End With
             NumofUsers += 1
-            FirstWelcomeMenu.createaccount(txtUserN.Text, txtPass.Text) ' increments the number of records
-            txtUserN.Text = ""      ' clears all the textboxes ready for another new student
+            FirstWelcomeMenu.createaccount(txtUserN.Text, txtPass.Text)
+            txtUserN.Text = ""
             txtPass.Text = ""
             txtConfirmP.Text = ""
 

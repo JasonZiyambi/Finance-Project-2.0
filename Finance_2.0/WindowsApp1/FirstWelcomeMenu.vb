@@ -36,6 +36,22 @@
         Next
         File.Close()
     End Sub
+    Sub SavetoGoalfile()
+        Dim Nrecord As String = ";"
+        Dim File = My.Computer.FileSystem.OpenTextFileWriter(filename2, False)
+        For i As Integer = 0 To Account.Length - 1
+            Try
+                If Account(i).GoalOutput <> Nothing Then
+                    Dim oneline As String = Account(i).GoalOutput
+                    File.Write(oneline)
+                    MsgBox(oneline)
+                End If
+            Catch
+                Exit For
+            End Try
+        Next
+        File.Close()
+    End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Login.txtPass.Text = Nothing
         Login.txtUserN.Text = Nothing
@@ -64,9 +80,26 @@
             End If
         Next
     End Sub
-
+    Function checkifUsernameisUsed(input)
+        Dim errorcount As Integer = 0
+        For i = 0 To Account.Length - 1
+            If input = Account(i).GetUsername Then
+            Else
+                errorcount += 1
+            End If
+        Next
+        If errorcount = 1000 Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
     Sub createaccount(ByVal username As String, ByVal password As String)
         Account(amountofaccounts()) = New Account(username, password, 0, 0, 0, 0, 0)
+        If checkifUsernameisUsed(NewUser.txtUserN.Text) = True Then
+            MsgBox("That Username is already in use")
+
+        End If
         savetofile()
     End Sub
     Function amountofaccounts()
@@ -89,5 +122,24 @@
         Account(Me.AccountNumber).SetHoursPerWeek(HPW)
         Account(Me.AccountNumber).SetAmountOfWeeks(AOW)
         savetofile()
+    End Sub
+
+    Sub createGoal(ByVal Goal As String, ByVal Price As String)
+        Account(amountofGoals()) = New Account(Goal, Price)
+        SavetoGoalfile()
+    End Sub
+    Function amountofGoals()
+        For i = 0 To Account.Length
+            If Account(i) Is Nothing Then
+                Return i
+
+            End If
+        Next
+    End Function
+
+    Sub SetGoals(Goal, price)
+        Account(Me.AccountNumber).SetGoal(Goal)
+        Account(Me.AccountNumber).setPrice(price)
+        SavetoGoalfile()
     End Sub
 End Class
