@@ -5,9 +5,10 @@
     End Sub
 
     Private Sub cmdsave_Click(sender As Object, e As EventArgs) Handles cmdsave.Click
-        FirstWelcomeMenu.SetGoals(txtGoal.Text, txtPrice.Text)
+        FirstWelcomeMenu.createGoal(txtName.Text, txtPrice.Text)
         MsgBox("Saved!")
-
+        txtName.Text = ""
+        txtPrice.Text = ""
     End Sub
 
 

@@ -1,5 +1,6 @@
 ﻿Public Class FirstWelcomeMenu
     Private Account(1000) As Account
+    Private Goals(1000) As Account
     Public AccountNumber As Integer
     Sub LoadFromFile()
         Dim sep As String = ","
@@ -39,10 +40,11 @@
     Sub SavetoGoalfile()
         Dim Nrecord As String = ";"
         Dim File = My.Computer.FileSystem.OpenTextFileWriter(filename2, False)
-        For i As Integer = 0 To Account.Length - 1
+        For i As Integer = 0 To Goals.Length
+
             Try
-                If Account(i).GoalOutput <> Nothing Then
-                    Dim oneline As String = Account(i).GoalOutput
+                If Goals(i).GoalOutput <> Nothing Then
+                    Dim oneline As String = Goals(i).GoalOutput
                     File.Write(oneline)
                     MsgBox(oneline)
                 End If
@@ -80,26 +82,26 @@
             End If
         Next
     End Sub
-    Function checkifUsernameisUsed(input)
-        Dim errorcount As Integer = 0
-        For i = 0 To Account.Length - 1
-            If input = Account(i).GetUsername Then
-            Else
-                errorcount += 1
-            End If
-        Next
-        If errorcount = 1000 Then
-            Return True
-        Else
-            Return False
-        End If
-    End Function
+    'Function checkifUsernameisUsed(input)
+    '    Dim errorcount As Integer = 0
+    '    For i = 0 To Account.Length - 1
+    '        If input = Account(i).GetUsername Then
+    '        Else
+    '            errorcount += 1
+    '        End If
+    '    Next
+    '    If errorcount = 1000 Then
+    '        Return True
+    '    Else
+    '        Return False
+    '    End If
+    'End Function
     Sub createaccount(ByVal username As String, ByVal password As String)
         Account(amountofaccounts()) = New Account(username, password, 0, 0, 0, 0, 0)
-        If checkifUsernameisUsed(NewUser.txtUserN.Text) = True Then
-            MsgBox("That Username is already in use")
+        'If checkifUsernameisUsed(NewUser.txtUserN.Text) = True Then
+        '    MsgBox("That Username is already in use")
 
-        End If
+        'End If
         savetofile()
     End Sub
     Function amountofaccounts()
@@ -124,22 +126,22 @@
         savetofile()
     End Sub
 
-    Sub createGoal(ByVal Goal As String, ByVal Price As String)
-        Account(amountofGoals()) = New Account(Goal, Price)
+    Sub createGoal(ByVal name As String, ByVal Price As String)
+        Goals(amountofGoals) = New Account(name, Price)
         SavetoGoalfile()
     End Sub
     Function amountofGoals()
-        For i = 0 To Account.Length
-            If Account(i) Is Nothing Then
+        For i = 0 To Goals.Length
+            If Goals(i) Is Nothing Then
                 Return i
 
             End If
         Next
     End Function
 
-    Sub SetGoals(Goal, price)
-        Account(Me.AccountNumber).SetGoal(Goal)
-        Account(Me.AccountNumber).setPrice(price)
-        SavetoGoalfile()
-    End Sub
+    'Sub Setname(name, price)
+    '    Goals(Me.AccountNumber).Setname(name)
+    '    Goals(Me.AccountNumber).setPrice(price)
+    '    SavetoGoalfile()
+    'End Sub
 End Class

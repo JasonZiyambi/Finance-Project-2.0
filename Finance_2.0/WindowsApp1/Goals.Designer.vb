@@ -27,7 +27,7 @@ Partial Class Goals
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtPrice = New System.Windows.Forms.TextBox()
-        Me.txtGoal = New System.Windows.Forms.TextBox()
+        Me.txtName = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'cmdBack
@@ -75,12 +75,12 @@ Partial Class Goals
         Me.txtPrice.Size = New System.Drawing.Size(100, 20)
         Me.txtPrice.TabIndex = 17
         '
-        'txtGoal
+        'txtName
         '
-        Me.txtGoal.Location = New System.Drawing.Point(166, 99)
-        Me.txtGoal.Name = "txtGoal"
-        Me.txtGoal.Size = New System.Drawing.Size(100, 20)
-        Me.txtGoal.TabIndex = 16
+        Me.txtName.Location = New System.Drawing.Point(166, 99)
+        Me.txtName.Name = "txtName"
+        Me.txtName.Size = New System.Drawing.Size(100, 20)
+        Me.txtName.TabIndex = 16
         '
         'Goals
         '
@@ -92,7 +92,7 @@ Partial Class Goals
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtPrice)
-        Me.Controls.Add(Me.txtGoal)
+        Me.Controls.Add(Me.txtName)
         Me.Name = "Goals"
         Me.Text = "Goals"
         Me.ResumeLayout(False)
@@ -105,5 +105,5 @@ Partial Class Goals
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents txtPrice As TextBox
-    Friend WithEvents txtGoal As TextBox
+    Friend WithEvents txtName As TextBox
 End Class

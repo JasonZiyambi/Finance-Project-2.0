@@ -1,6 +1,7 @@
 ﻿Public Class Account
 #Region "Variables"
-    Private Goals As String
+
+    Private name As String
     Private Prices As Double
 
     Private RateofPay As Double
@@ -23,8 +24,8 @@
         Me.Expenditure = Expenditure
         Me.CurrentBalance = CurrentBalance
     End Sub
-    Public Sub New(ByVal Goals As String, ByVal Prices As Double)
-        Me.Goals = Goals
+    Public Sub New(ByVal Name As String, ByVal Prices As Double)
+        Me.name = Name
         Me.Prices = Prices
     End Sub
 #End Region
@@ -51,8 +52,8 @@
     Function MonthlyIncome() As Double
         Return RateofPay * HoursPerWeek * AmountOfWeeks
     End Function
-    Sub SetGoal(ByVal Goal As String)
-        Me.Goals = Goal
+    Sub Setname(ByVal Name As String)
+        Me.name = Name
     End Sub
     Sub setPrice(ByVal Price As Double)
         Me.Prices = Price
@@ -61,7 +62,7 @@
         Return Me.Username & "," & Me.Password & "," & Me.RateofPay & "," & Me.HoursPerWeek & "," & Me.AmountOfWeeks & "," & Me.Expenditure & "," & Me.CurrentBalance & ";"
     End Function
     Function GoalOutput()
-        Return Me.Goals & "," & Me.Prices & ";"
+        Return Me.name & "," & Me.Prices & ";"
     End Function
 #End Region
 End Class
