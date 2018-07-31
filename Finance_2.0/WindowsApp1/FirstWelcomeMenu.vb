@@ -1,13 +1,26 @@
 ﻿Public Class FirstWelcomeMenu
     Private Account(1000) As Account
     Public AccountNumber As Integer
+
+    Private goals(1000) As record
+    Structure record
+        Dim name As String
+        Dim Price As Double
+    End Structure
+
+
+
     Sub LoadFromFile()
         Dim sep As String = ","
         Dim File = My.Computer.FileSystem.ReadAllText(filename), Record() As String = File.Split(";")
         For NumofUsers = 0 To Record.Length - 1
+            For i = 0 To 1000
+                goals(i).name = Nothing
+                goals(i).Price = Nothing
+            Next
             If Record(NumofUsers) <> Nothing Then
                 Dim items() As String = Record(NumofUsers).Split(",")
-                Account(NumofUsers) = New Account(items(0), items(1), items(2), items(3), items(4), items(5), items(6))
+                Account(NumofUsers) = New Account(items(0), items(1), items(2), items(3), items(4), items(5), items(6),)
             End If
         Next
 
@@ -70,6 +83,8 @@
     '        Return False
     '    End If
     'End Function
+
+
     Sub createaccount(ByVal username As String, ByVal password As String)
         Account(amountofaccounts()) = New Account(username, password, 0, 0, 0, 0, 0,)
         'If checkifUsernameisUsed(NewUser.txtUserN.Text) = True Then

@@ -55,6 +55,9 @@
     Function RecordOutput()
         Return Me.Username & "," & Me.Password & "," & Me.RateofPay & "," & Me.HoursPerWeek & "," & Me.AmountOfWeeks & "," & Me.Expenditure & "," & Me.CurrentBalance & ";"
     End Function
+
+
+
     Function amountofgoals()
         For i = 0 To goals.Length - 1
             If GoalOutput(i) = ",,0;" Then Return i
