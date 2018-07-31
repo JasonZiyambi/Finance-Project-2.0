@@ -1,8 +1,10 @@
 ﻿Public Class Account
 #Region "Variables"
-
-    Private name As String
-    Private Prices As Double
+    Private goals(1000) As record
+    Structure record
+        Dim name As String
+        Dim Price As Double
+    End Structure
 
     Private RateofPay As Double
     Private HoursPerWeek As Double
@@ -13,7 +15,7 @@
     Private Password As String
 #End Region
 #Region "Constructor"
-    Public Sub New(ByVal Username As String, ByVal Password As String, ByVal Rateofpay As String, ByVal HoursPerWeek As String, AmountOfWeeks As String, Expenditure As String, CurrentBalance As String)
+    Public Sub New(ByVal Username As String, ByVal Password As String, ByVal Rateofpay As String, ByVal HoursPerWeek As String, AmountOfWeeks As String, Expenditure As String, CurrentBalance As String, goals() As record)
         ' This call is required by the designer.
         ' InitializeComponent()
         Me.Username = Username
@@ -23,10 +25,8 @@
         Me.AmountOfWeeks = AmountOfWeeks
         Me.Expenditure = Expenditure
         Me.CurrentBalance = CurrentBalance
-    End Sub
-    Public Sub New(ByVal Name As String, ByVal Prices As Double)
-        Me.name = Name
-        Me.Prices = Prices
+
+        Me.goals = goals
     End Sub
 #End Region
 #Region "Functions"
@@ -52,17 +52,21 @@
     Function MonthlyIncome() As Double
         Return RateofPay * HoursPerWeek * AmountOfWeeks
     End Function
-    Sub Setname(ByVal Name As String)
-        Me.name = Name
-    End Sub
-    Sub setPrice(ByVal Price As Double)
-        Me.Prices = Price
-    End Sub
     Function RecordOutput()
         Return Me.Username & "," & Me.Password & "," & Me.RateofPay & "," & Me.HoursPerWeek & "," & Me.AmountOfWeeks & "," & Me.Expenditure & "," & Me.CurrentBalance & ";"
     End Function
-    Function GoalOutput()
-        Return Me.name & "," & Me.Prices & ";"
+    Function amountofgoals()
+        For i = 0 To goals.Length - 1
+            If GoalOutput(i) = ",,0;" Then Return i
+        Next
+        ' Return 1000
+    End Function
+    Sub AddGoal(ByVal name As String, ByVal price As Double)
+        goals(amountofgoals()).name = name
+        goals(amountofgoals()).Price = price
+    End Sub
+    Function GoalOutput(ByVal goalnumber As Integer)
+        Return Me.GetUsername & "," & goals(goalnumber).name & "," & goals(goalnumber).Price & ";"
     End Function
 #End Region
 End Class

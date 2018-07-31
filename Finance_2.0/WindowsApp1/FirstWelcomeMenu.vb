@@ -1,6 +1,5 @@
 ﻿Public Class FirstWelcomeMenu
     Private Account(1000) As Account
-    Private Goals(1000) As Account
     Public AccountNumber As Integer
     Sub LoadFromFile()
         Dim sep As String = ","
@@ -8,15 +7,6 @@
         For NumofUsers = 0 To Record.Length - 1
             If Record(NumofUsers) <> Nothing Then
                 Dim items() As String = Record(NumofUsers).Split(",")
-                '            With UserData(NumofUsers)
-                '                .Username = items(0)
-                '                .Password = items(1)
-                '                .RateOfPay = items(2)
-                '                .HoursPerWeek = items(3)
-                '                .AmountOfWeeks = items(4)
-                '                .Expenditure = items(5)
-                '                .CurrentBalance = items(6)
-                '            End With
                 Account(NumofUsers) = New Account(items(0), items(1), items(2), items(3), items(4), items(5), items(6))
             End If
         Next
@@ -37,23 +27,7 @@
         Next
         File.Close()
     End Sub
-    Sub SavetoGoalfile()
-        Dim Nrecord As String = ";"
-        Dim File = My.Computer.FileSystem.OpenTextFileWriter(filename2, False)
-        For i As Integer = 0 To Goals.Length
 
-            Try
-                If Goals(i).GoalOutput <> Nothing Then
-                    Dim oneline As String = Goals(i).GoalOutput
-                    File.Write(oneline)
-                    MsgBox(oneline)
-                End If
-            Catch
-                Exit For
-            End Try
-        Next
-        File.Close()
-    End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Login.txtPass.Text = Nothing
         Login.txtUserN.Text = Nothing
@@ -97,7 +71,7 @@
     '    End If
     'End Function
     Sub createaccount(ByVal username As String, ByVal password As String)
-        Account(amountofaccounts()) = New Account(username, password, 0, 0, 0, 0, 0)
+        Account(amountofaccounts()) = New Account(username, password, 0, 0, 0, 0, 0,)
         'If checkifUsernameisUsed(NewUser.txtUserN.Text) = True Then
         '    MsgBox("That Username is already in use")
 
@@ -108,10 +82,8 @@
         For i = 0 To Account.Length
             If Account(i) Is Nothing Then
                 Return i
-
             End If
         Next
-
     End Function
     Private Sub FirstWelcomeMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadFromFile()
@@ -126,22 +98,28 @@
         savetofile()
     End Sub
 
+    Sub SavetoGoalfile()
+        Dim data As String = Nothing
+        For accountNo = 0 To amountofaccounts() - 1
+            For i As Integer = 0 To 1000
+                Try
+                    If Account(accountNo).GoalOutput(i) <> Account(accountNo).GetUsername & ",,0;" Then
+                        Dim oneline As String = Account(accountNo).GoalOutput(i)
+                        data = data & oneline
+                        MsgBox(oneline)
+                    End If
+                Catch
+                    Exit For
+                End Try
+            Next
+
+        Next
+        Dim File = My.Computer.FileSystem.OpenTextFileWriter(filename2, False)
+        File.Write(Data)
+        File.Close()
+    End Sub
     Sub createGoal(ByVal name As String, ByVal Price As String)
-        Goals(amountofGoals) = New Account(name, Price)
+        Account(AccountNumber).AddGoal(name, Price)
         SavetoGoalfile()
     End Sub
-    Function amountofGoals()
-        For i = 0 To Goals.Length
-            If Goals(i) Is Nothing Then
-                Return i
-
-            End If
-        Next
-    End Function
-
-    'Sub Setname(name, price)
-    '    Goals(Me.AccountNumber).Setname(name)
-    '    Goals(Me.AccountNumber).setPrice(price)
-    '    SavetoGoalfile()
-    'End Sub
 End Class

@@ -11,7 +11,7 @@
             '    .Username = txtUserN.Text
             '    .Password = txtPass.Text
             'End With
-            NumofUsers += 1
+            'NumofUsers += 1
             FirstWelcomeMenu.createaccount(txtUserN.Text, txtPass.Text)
             txtUserN.Text = ""
             txtPass.Text = ""

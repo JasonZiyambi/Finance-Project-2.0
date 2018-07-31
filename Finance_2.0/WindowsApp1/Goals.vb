@@ -10,7 +10,4 @@
         txtName.Text = ""
         txtPrice.Text = ""
     End Sub
-
-
-
 End Class
