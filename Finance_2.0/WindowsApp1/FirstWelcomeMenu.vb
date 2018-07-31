@@ -2,27 +2,49 @@
     Private Account(1000) As Account
     Public AccountNumber As Integer
 
-    Private goals(1000) As record
-    Structure record
-        Dim name As String
-        Dim Price As Double
-    End Structure
+    Private username(10000) As String
+    Private GName(10000) As String
+    Private Price(10000) As Double
 
 
+    'Sub settingarraytonothing()
+    '    For i = 0 To 10000
+    '        Goals(i).name = Nothing
+    '        Goals(i).Price = Nothing
+    '    Next
+
+    'End Sub
 
     Sub LoadFromFile()
+        Dim file2 = My.Computer.FileSystem.ReadAllText(filename2), Record2() As String = file2.Split(";")
+        For NumofUsers = 0 To Record2.Length - 1
+
+            If Record2(NumofUsers) <> Nothing Then
+                Dim items() As String = Record2(NumofUsers).Split(",")
+                username(NumofUsers) = items(0)
+                GName(NumofUsers) = items(1)
+                Price(NumofUsers) = items(2)
+            End If
+
+        Next
+
+
+
+
         Dim sep As String = ","
         Dim File = My.Computer.FileSystem.ReadAllText(filename), Record() As String = File.Split(";")
         For NumofUsers = 0 To Record.Length - 1
-            For i = 0 To 1000
-                goals(i).name = Nothing
-                goals(i).Price = Nothing
-            Next
             If Record(NumofUsers) <> Nothing Then
                 Dim items() As String = Record(NumofUsers).Split(",")
-                Account(NumofUsers) = New Account(items(0), items(1), items(2), items(3), items(4), items(5), items(6),)
+
+                If username(NumofUsers) = Account(NumofUsers).GetUsername Then
+                    Account(NumofUsers) = New Account(items(0), items(1), items(2), items(3), items(4), items(5), items(6), ,)
+                End If
+
             End If
+
         Next
+
 
     End Sub
     Sub savetofile()
@@ -86,7 +108,11 @@
 
 
     Sub createaccount(ByVal username As String, ByVal password As String)
-        Account(amountofaccounts()) = New Account(username, password, 0, 0, 0, 0, 0,)
+        For i = 0 To 1000
+            GName(i) = Nothing
+            Price(i) = Nothing
+        Next
+        Account(amountofaccounts()) = New Account(username, password, 0, 0, 0, 0, 0, GName, Price)
         'If checkifUsernameisUsed(NewUser.txtUserN.Text) = True Then
         '    MsgBox("That Username is already in use")
 

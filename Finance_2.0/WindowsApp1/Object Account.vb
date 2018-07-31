@@ -15,7 +15,7 @@
     Private Password As String
 #End Region
 #Region "Constructor"
-    Public Sub New(ByVal Username As String, ByVal Password As String, ByVal Rateofpay As String, ByVal HoursPerWeek As String, AmountOfWeeks As String, Expenditure As String, CurrentBalance As String, goals() As record)
+    Public Sub New(ByVal Username As String, ByVal Password As String, ByVal Rateofpay As String, ByVal HoursPerWeek As String, AmountOfWeeks As String, Expenditure As String, CurrentBalance As String, name() As String, price() As Double)
         ' This call is required by the designer.
         ' InitializeComponent()
         Me.Username = Username
@@ -26,7 +26,11 @@
         Me.Expenditure = Expenditure
         Me.CurrentBalance = CurrentBalance
 
-        Me.goals = goals
+        For i = 0 To 1000
+            Me.goals(i).Price = price(i)
+            Me.goals(i).name = name(i)
+        Next
+
     End Sub
 #End Region
 #Region "Functions"
