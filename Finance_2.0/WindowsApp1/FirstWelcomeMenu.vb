@@ -2,9 +2,14 @@
     Private Account(1000) As Account
     Public AccountNumber As Integer
 
-    Private username(10000) As String
-    Private GName(10000) As String
-    Private Price(10000) As Double
+    Private goals(1000) As record
+    Structure record
+        Dim Username As String
+        Dim name As String
+        Dim Price As Double
+    End Structure
+    Dim Gname As New List(Of String)
+    Dim Price As New List(Of Double)
 
 
     'Sub settingarraytonothing()
@@ -18,31 +23,29 @@
     Sub LoadFromFile()
         Dim file2 = My.Computer.FileSystem.ReadAllText(filename2), Record2() As String = file2.Split(";")
         For NumofUsers = 0 To Record2.Length - 1
-
             If Record2(NumofUsers) <> Nothing Then
                 Dim items() As String = Record2(NumofUsers).Split(",")
-                username(NumofUsers) = items(0)
-                GName(NumofUsers) = items(1)
-                Price(NumofUsers) = items(2)
+                goals(NumofUsers).Username = items(0)
+                goals(NumofUsers).name = items(1)
+                goals(NumofUsers).Price = items(2)
             End If
-
         Next
-
-
-
 
         Dim sep As String = ","
         Dim File = My.Computer.FileSystem.ReadAllText(filename), Record() As String = File.Split(";")
         For NumofUsers = 0 To Record.Length - 1
             If Record(NumofUsers) <> Nothing Then
                 Dim items() As String = Record(NumofUsers).Split(",")
-
-                If username(NumofUsers) = Account(NumofUsers).GetUsername Then
-                    Account(NumofUsers) = New Account(items(0), items(1), items(2), items(3), items(4), items(5), items(6), ,)
-                End If
-
+                For i = 0 To 1000
+                    If goals(i).Username = items(0) Then
+                        Gname.Add(goals(i).name)
+                        Price.Add(goals(i).Price)
+                    End If
+                Next
+                Account(NumofUsers) = New Account(items(0), items(1), items(2), items(3), items(4), items(5), items(6), Gname, Price)
             End If
-
+            Gname.Clear()
+            Price.Clear()
         Next
 
 
@@ -162,5 +165,9 @@
     Sub createGoal(ByVal name As String, ByVal Price As String)
         Account(AccountNumber).AddGoal(name, Price)
         SavetoGoalfile()
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
     End Sub
 End Class
