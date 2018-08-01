@@ -141,7 +141,6 @@
         Account(Me.AccountNumber).SetAmountOfWeeks(AOW)
         savetofile()
     End Sub
-
     Sub SavetoGoalfile()
         Dim data As String = Nothing
         For accountNo = 0 To amountofaccounts() - 1
@@ -150,7 +149,7 @@
                     If Account(accountNo).GoalOutput(i) <> Account(accountNo).GetUsername & ",,0;" Then
                         Dim oneline As String = Account(accountNo).GoalOutput(i)
                         data = data & oneline
-                        MsgBox(oneline)
+                        'MsgBox(oneline)
                     End If
                 Catch
                     Exit For
@@ -165,9 +164,5 @@
     Sub createGoal(ByVal name As String, ByVal Price As String)
         Account(AccountNumber).AddGoal(name, Price)
         SavetoGoalfile()
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
     End Sub
 End Class

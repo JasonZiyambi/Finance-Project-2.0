@@ -59,21 +59,26 @@
     Function RecordOutput()
         Return Me.Username & "," & Me.Password & "," & Me.RateofPay & "," & Me.HoursPerWeek & "," & Me.AmountOfWeeks & "," & Me.Expenditure & "," & Me.CurrentBalance & ";"
     End Function
-
-
-
     Function amountofgoals()
         For i = 0 To goals.Length - 1
-            If GoalOutput(i) = ",,0;" Then Return i
+            If GoalOutput(i) = Me.GetUsername & ",,0;" Then Return i
         Next
-        ' Return 1000
+        'Return 1000
     End Function
     Sub AddGoal(ByVal name As String, ByVal price As Double)
-        goals(amountofgoals()).name = name
-        goals(amountofgoals()).Price = price
+        Dim Amount As Integer = amountofgoals()
+        goals(Amount).name = name
+        goals(Amount).Price = price
     End Sub
     Function GoalOutput(ByVal goalnumber As Integer)
         Return Me.GetUsername & "," & goals(goalnumber).name & "," & goals(goalnumber).Price & ";"
+    End Function
+
+    Function goalname(ByVal goal As Integer)
+        Return goals(goal).name
+    End Function
+    Function goalprice(ByVal goal As Integer)
+        Return goals(goal).Price
     End Function
 #End Region
 End Class
