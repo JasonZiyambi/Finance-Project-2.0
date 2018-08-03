@@ -165,4 +165,20 @@
         Account(AccountNumber).AddGoal(name, Price)
         SavetoGoalfile()
     End Sub
+
+    Function getgoalsmaxlength()
+        For i = 0 To goals.Length
+            Return i
+        Next
+    End Function
+
+    Sub Combobox()
+        For i = 0 To getgoalsmaxlength()
+
+            If goals(i).name <> Nothing Then
+                Advisor.ComboBox1.Items.Add(goals(AccountNumber).name)
+            End If
+
+        Next
+    End Sub
 End Class

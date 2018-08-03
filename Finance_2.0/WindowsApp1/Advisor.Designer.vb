@@ -22,23 +22,12 @@ Partial Class Advisor
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtDate = New System.Windows.Forms.TextBox()
         Me.txtAmount = New System.Windows.Forms.TextBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cmdBack = New System.Windows.Forms.Button()
         Me.SuspendLayout()
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(403, 96)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(80, 20)
-        Me.Label3.TabIndex = 11
-        Me.Label3.Text = "Deadline"
         '
         'Label2
         '
@@ -60,14 +49,6 @@ Partial Class Advisor
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "Select an Item"
         '
-        'txtDate
-        '
-        Me.txtDate.Location = New System.Drawing.Point(407, 136)
-        Me.txtDate.Name = "txtDate"
-        Me.txtDate.ReadOnly = True
-        Me.txtDate.Size = New System.Drawing.Size(100, 20)
-        Me.txtDate.TabIndex = 8
-        '
         'txtAmount
         '
         Me.txtAmount.Location = New System.Drawing.Point(243, 137)
@@ -84,15 +65,23 @@ Partial Class Advisor
         Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox1.TabIndex = 6
         '
+        'cmdBack
+        '
+        Me.cmdBack.Location = New System.Drawing.Point(170, 193)
+        Me.cmdBack.Name = "cmdBack"
+        Me.cmdBack.Size = New System.Drawing.Size(75, 23)
+        Me.cmdBack.TabIndex = 11
+        Me.cmdBack.Text = "Back"
+        Me.cmdBack.UseVisualStyleBackColor = True
+        '
         'Advisor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(571, 256)
-        Me.Controls.Add(Me.Label3)
+        Me.ClientSize = New System.Drawing.Size(403, 256)
+        Me.Controls.Add(Me.cmdBack)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtDate)
         Me.Controls.Add(Me.txtAmount)
         Me.Controls.Add(Me.ComboBox1)
         Me.Name = "Advisor"
@@ -101,11 +90,9 @@ Partial Class Advisor
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtDate As TextBox
     Friend WithEvents txtAmount As TextBox
+    Friend WithEvents cmdBack As Button
     Friend WithEvents ComboBox1 As ComboBox
 End Class

@@ -80,5 +80,7 @@
     Function goalprice(ByVal goal As Integer)
         Return goals(goal).Price
     End Function
+
+
 #End Region
 End Class
