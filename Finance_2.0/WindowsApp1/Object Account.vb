@@ -73,14 +73,16 @@
     Function GoalOutput(ByVal goalnumber As Integer)
         Return Me.GetUsername & "," & goals(goalnumber).name & "," & goals(goalnumber).Price & ";"
     End Function
-
+    Function getgoalsmaxlength()
+        For i = 0 To goals.Length
+            If goals(i).name = Nothing Then Return i
+        Next
+    End Function
     Function goalname(ByVal goal As Integer)
         Return goals(goal).name
     End Function
     Function goalprice(ByVal goal As Integer)
         Return goals(goal).Price
     End Function
-
-
 #End Region
 End Class
