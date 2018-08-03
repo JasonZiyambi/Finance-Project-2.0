@@ -178,7 +178,7 @@
             If goals(i).name <> Nothing Then
                 Advisor.ComboBox1.Items.Add(goals(AccountNumber).name)
             End If
-
         Next
+
     End Sub
 End Class
