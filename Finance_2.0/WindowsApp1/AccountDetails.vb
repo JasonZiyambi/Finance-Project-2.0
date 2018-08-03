@@ -13,8 +13,15 @@
     End Sub
 
     Private Sub cmdSave_Click(sender As Object, e As EventArgs) Handles cmdSave.Click
-        FirstWelcomeMenu.setvalues(txtROP.Text, txtHPW.Text, txtAOW.Text)
+        FirstWelcomeMenu.setvalues(txtROP.Text, txtHPW.Text, txtAOW.Text, txtBalance.Text)
         MsgBox("Saved!")
+        MainMenu.Label3.Visible = True
+        MainMenu.Label3.Text = "£" + txtBalance.Text
+        Label5.Visible = False
+        txtBalance.Visible = False
     End Sub
 
+    Private Sub AccountDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FirstWelcomeMenu.accountdetailslabel()
+    End Sub
 End Class

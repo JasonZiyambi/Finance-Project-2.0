@@ -3,15 +3,15 @@
 
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
-<<<<<<< HEAD
+        '<<<<<<< HEAD
         'For i = 0 To FirstWelcomeMenu.getgoalsmaxlength
         '    If ComboBox1.SelectedItem =  Then
         '        txtAmount.Text = 
         '    End If
         'Next
-=======
+        '=======
         FirstWelcomeMenu.comboboxchanged(ComboBox1.SelectedItem)
->>>>>>> fe781e22dd8d7d895a47e86fe02eed5d7a443e1d
+'>>>>>>> fe781e22dd8d7d895a47e86fe02eed5d7a443e1d
     End Sub
 
     Private Sub Advisor_Load(sender As Object, e As EventArgs) Handles MyBase.Load

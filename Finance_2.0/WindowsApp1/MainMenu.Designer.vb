@@ -28,6 +28,8 @@ Partial Class MainMenu
         Me.cmdProjections = New System.Windows.Forms.Button()
         Me.cmdAnalysis = New System.Windows.Forms.Button()
         Me.cmdAdvisor = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'CmdAccount
@@ -52,7 +54,7 @@ Partial Class MainMenu
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("MS Reference Sans Serif", 21.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(309, 97)
+        Me.Label1.Location = New System.Drawing.Point(310, 24)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(179, 35)
         Me.Label1.TabIndex = 13
@@ -89,11 +91,34 @@ Partial Class MainMenu
         Me.cmdAdvisor.UseVisualStyleBackColor = True
         Me.cmdAdvisor.Visible = False
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(193, 102)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(144, 20)
+        Me.Label2.TabIndex = 16
+        Me.Label2.Text = "Current Balance:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(343, 102)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(63, 20)
+        Me.Label3.TabIndex = 17
+        Me.Label3.Text = "Label3"
+        Me.Label3.Visible = False
+        '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.CmdAccount)
         Me.Controls.Add(Me.cmdLogout)
         Me.Controls.Add(Me.Label1)
@@ -113,4 +138,6 @@ Partial Class MainMenu
     Friend WithEvents cmdProjections As Button
     Friend WithEvents cmdAnalysis As Button
     Friend WithEvents cmdAdvisor As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
 End Class

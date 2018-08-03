@@ -90,6 +90,12 @@
     <Compile Include="Analysis.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Expenditure.Designer.vb">
+      <DependentUpon>Expenditure.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Expenditure.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FirstWelcomeMenu.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,12 @@
       <DependentUpon>Goals.vb</DependentUpon>
     </Compile>
     <Compile Include="Goals.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Income.Designer.vb">
+      <DependentUpon>Income.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Income.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="login.Designer.vb">
@@ -152,11 +164,17 @@
     <EmbeddedResource Include="Advisor.resx">
       <DependentUpon>Advisor.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Expenditure.resx">
+      <DependentUpon>Expenditure.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FirstWelcomeMenu.resx">
       <DependentUpon>FirstWelcomeMenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Goals.resx">
       <DependentUpon>Goals.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Income.resx">
+      <DependentUpon>Income.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.vb</DependentUpon>

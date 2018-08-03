@@ -135,10 +135,11 @@
     Sub setaccountnumber(ByVal accountnumber As Integer)
         Me.AccountNumber = accountnumber
     End Sub
-    Sub setvalues(ROP, HPW, AOW)
+    Sub setvalues(ROP, HPW, AOW, CB)
         Account(Me.AccountNumber).SetRateOfPay(ROP)
         Account(Me.AccountNumber).SetHoursPerWeek(HPW)
         Account(Me.AccountNumber).SetAmountOfWeeks(AOW)
+        Account(Me.AccountNumber).setCurrentBalance(CB)
         savetofile()
     End Sub
     Sub SavetoGoalfile()
@@ -183,6 +184,10 @@
                 Advisor.txtAmount.Text = Account(AccountNumber).goalprice(i)
             End If
         Next
+    End Sub
+
+    Sub accountdetailslabel()
+        AccountDetails.Label4.Text = "Welcome: " + Account(AccountNumber).GetUsername
     End Sub
 
 End Class

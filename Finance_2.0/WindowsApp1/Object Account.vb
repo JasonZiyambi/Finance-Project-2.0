@@ -44,6 +44,10 @@
         If Me.Password = Password Then Return True Else Return False
     End Function
 
+    Sub setCurrentBalance(ByVal CB As Double)
+        Me.CurrentBalance = CB
+    End Sub
+
     Sub SetRateOfPay(ByVal ROP As Double)
         Me.RateofPay = ROP
     End Sub

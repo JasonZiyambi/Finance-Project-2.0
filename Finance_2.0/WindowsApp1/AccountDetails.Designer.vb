@@ -32,11 +32,13 @@ Partial Class AccountDetails
         Me.txtAOW = New System.Windows.Forms.TextBox()
         Me.txtHPW = New System.Windows.Forms.TextBox()
         Me.txtROP = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtBalance = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'cmdSave
         '
-        Me.cmdSave.Location = New System.Drawing.Point(242, 282)
+        Me.cmdSave.Location = New System.Drawing.Point(242, 345)
         Me.cmdSave.Name = "cmdSave"
         Me.cmdSave.Size = New System.Drawing.Size(121, 27)
         Me.cmdSave.TabIndex = 20
@@ -47,7 +49,7 @@ Partial Class AccountDetails
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(221, 44)
+        Me.Label4.Location = New System.Drawing.Point(221, 58)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(142, 20)
         Me.Label4.TabIndex = 19
@@ -55,7 +57,7 @@ Partial Class AccountDetails
         '
         'CmdReturn
         '
-        Me.CmdReturn.Location = New System.Drawing.Point(242, 380)
+        Me.CmdReturn.Location = New System.Drawing.Point(242, 443)
         Me.CmdReturn.Name = "CmdReturn"
         Me.CmdReturn.Size = New System.Drawing.Size(121, 27)
         Me.CmdReturn.TabIndex = 18
@@ -64,7 +66,7 @@ Partial Class AccountDetails
         '
         'CmdCTG
         '
-        Me.CmdCTG.Location = New System.Drawing.Point(242, 331)
+        Me.CmdCTG.Location = New System.Drawing.Point(242, 394)
         Me.CmdCTG.Name = "CmdCTG"
         Me.CmdCTG.Size = New System.Drawing.Size(121, 27)
         Me.CmdCTG.TabIndex = 17
@@ -122,11 +124,30 @@ Partial Class AccountDetails
         Me.txtROP.Size = New System.Drawing.Size(100, 20)
         Me.txtROP.TabIndex = 11
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(109, 275)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(177, 20)
+        Me.Label5.TabIndex = 22
+        Me.Label5.Text = "Set Current Balance:"
+        '
+        'txtBalance
+        '
+        Me.txtBalance.Location = New System.Drawing.Point(342, 275)
+        Me.txtBalance.Name = "txtBalance"
+        Me.txtBalance.Size = New System.Drawing.Size(100, 20)
+        Me.txtBalance.TabIndex = 21
+        '
         'AccountDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(559, 450)
+        Me.ClientSize = New System.Drawing.Size(559, 501)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.txtBalance)
         Me.Controls.Add(Me.cmdSave)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.CmdReturn)
@@ -154,4 +175,6 @@ Partial Class AccountDetails
     Friend WithEvents txtAOW As TextBox
     Friend WithEvents txtHPW As TextBox
     Friend WithEvents txtROP As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtBalance As TextBox
 End Class
