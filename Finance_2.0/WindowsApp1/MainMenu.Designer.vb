@@ -30,6 +30,7 @@ Partial Class MainMenu
         Me.cmdAdvisor = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.CmdCTG = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'CmdAccount
@@ -68,7 +69,6 @@ Partial Class MainMenu
         Me.cmdProjections.TabIndex = 12
         Me.cmdProjections.Text = "Projections"
         Me.cmdProjections.UseVisualStyleBackColor = True
-        Me.cmdProjections.Visible = False
         '
         'cmdAnalysis
         '
@@ -79,7 +79,6 @@ Partial Class MainMenu
         Me.cmdAnalysis.TabIndex = 11
         Me.cmdAnalysis.Text = "Analysis"
         Me.cmdAnalysis.UseVisualStyleBackColor = False
-        Me.cmdAnalysis.Visible = False
         '
         'cmdAdvisor
         '
@@ -89,7 +88,6 @@ Partial Class MainMenu
         Me.cmdAdvisor.TabIndex = 10
         Me.cmdAdvisor.Text = "Advisor "
         Me.cmdAdvisor.UseVisualStyleBackColor = True
-        Me.cmdAdvisor.Visible = False
         '
         'Label2
         '
@@ -107,16 +105,25 @@ Partial Class MainMenu
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(343, 102)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(63, 20)
+        Me.Label3.Size = New System.Drawing.Size(119, 20)
         Me.Label3.TabIndex = 17
-        Me.Label3.Text = "Label3"
-        Me.Label3.Visible = False
+        Me.Label3.Text = "                      "
+        '
+        'CmdCTG
+        '
+        Me.CmdCTG.Location = New System.Drawing.Point(86, 184)
+        Me.CmdCTG.Name = "CmdCTG"
+        Me.CmdCTG.Size = New System.Drawing.Size(115, 35)
+        Me.CmdCTG.TabIndex = 18
+        Me.CmdCTG.Text = "Continue to Goals"
+        Me.CmdCTG.UseVisualStyleBackColor = True
         '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.CmdCTG)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.CmdAccount)
@@ -140,4 +147,5 @@ Partial Class MainMenu
     Friend WithEvents cmdAdvisor As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents CmdCTG As Button
 End Class

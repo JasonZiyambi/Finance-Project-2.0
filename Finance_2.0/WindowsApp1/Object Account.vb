@@ -15,7 +15,7 @@
     Private Password As String
 #End Region
 #Region "Constructor"
-    Public Sub New(ByVal Username As String, ByVal Password As String, ByVal Rateofpay As String, ByVal HoursPerWeek As String, AmountOfWeeks As String, Expenditure As String, CurrentBalance As String, name As List(Of String), price As List(Of Double))
+    Public Sub New(ByVal Username As String, ByVal Password As String, ByVal Rateofpay As Integer, ByVal HoursPerWeek As Integer, AmountOfWeeks As Integer, Expenditure As String, CurrentBalance As Integer, name As List(Of String), price As List(Of Double))
         ' This call is required by the designer.
         ' InitializeComponent()
         Me.Username = Username
@@ -40,6 +40,11 @@
     Function GetUsername()
         Return Me.Username
     End Function
+
+    Function GetCurrentBalance()
+        Return Me.CurrentBalance
+    End Function
+
     Function CheckPassword(ByVal Password As String)
         If Me.Password = Password Then Return True Else Return False
     End Function
@@ -87,6 +92,15 @@
     End Function
     Function goalprice(ByVal goal As Integer)
         Return goals(goal).Price
+    End Function
+    Function ROP()
+        Return Me.RateofPay
+    End Function
+    Function amountofweeksreturn()
+        Return Me.AmountOfWeeks
+    End Function
+    Function amountofhoursreturn()
+        Return Me.HoursPerWeek
     End Function
 #End Region
 End Class
