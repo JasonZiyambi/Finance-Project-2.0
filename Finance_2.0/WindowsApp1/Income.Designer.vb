@@ -32,7 +32,7 @@ Partial Class Income
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(65, 114)
+        Me.Label1.Location = New System.Drawing.Point(60, 119)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(73, 20)
         Me.Label1.TabIndex = 18
@@ -40,7 +40,7 @@ Partial Class Income
         '
         'txtInc
         '
-        Me.txtInc.Location = New System.Drawing.Point(173, 114)
+        Me.txtInc.Location = New System.Drawing.Point(168, 119)
         Me.txtInc.Name = "txtInc"
         Me.txtInc.Size = New System.Drawing.Size(100, 20)
         Me.txtInc.TabIndex = 17
