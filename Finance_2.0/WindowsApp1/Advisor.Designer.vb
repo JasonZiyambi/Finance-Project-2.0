@@ -70,11 +70,11 @@ Partial Class Advisor
         '
         'cmdBack
         '
-<<<<<<< HEAD
+
         Me.cmdBack.Location = New System.Drawing.Point(176, 230)
-=======
+
         Me.cmdBack.Location = New System.Drawing.Point(170, 250)
->>>>>>> 63f230470663d1af422391eccae2358d6677bb58
+
         Me.cmdBack.Name = "cmdBack"
         Me.cmdBack.Size = New System.Drawing.Size(75, 23)
         Me.cmdBack.TabIndex = 11
@@ -103,13 +103,13 @@ Partial Class Advisor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-<<<<<<< HEAD
+
         Me.ClientSize = New System.Drawing.Size(403, 449)
-=======
+
         Me.ClientSize = New System.Drawing.Size(403, 361)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
->>>>>>> 63f230470663d1af422391eccae2358d6677bb58
+
         Me.Controls.Add(Me.cmdBack)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)

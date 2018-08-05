@@ -9,7 +9,7 @@
         '        txtAmount.Text = 
         '    End If
         'Next
-        '=======
+
         FirstWelcomeMenu.comboboxchanged(ComboBox1.SelectedItem)
     End Sub
 
@@ -28,10 +28,6 @@
 
     End Sub
 
-<<<<<<< HEAD
-    Private Sub Label4_Click(sender As Object, e As EventArgs)
-
-=======
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
             MsgBox("Weeks: " & FirstWelcomeMenu.outputtimetaken(CDbl(txtAmount.Text)))
@@ -43,6 +39,6 @@
             MsgBox("You need to work " & FirstWelcomeMenu.hoursneeded(CDbl(txtAmount.Text)) & " Hours")
         Catch
         End Try
->>>>>>> 63f230470663d1af422391eccae2358d6677bb58
+
     End Sub
 End Class

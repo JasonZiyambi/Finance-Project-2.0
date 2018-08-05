@@ -5,10 +5,8 @@
 
     Private Sub CmdReturn_Click(sender As Object, e As EventArgs) Handles CmdReturn.Click
         MainMenu.Show()
-        Me.Hide()
-        MainMenu.cmdAdvisor.Visible = True
-        MainMenu.cmdProjections.Visible = True
-        MainMenu.cmdAnalysis.Visible = True
+        Me.Close()
+
     End Sub
 
     Private Sub cmdSave_Click(sender As Object, e As EventArgs) Handles cmdSave.Click
@@ -28,6 +26,5 @@
     Private Sub AccountDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         FirstWelcomeMenu.accountdetailslabel()
     End Sub
-
 
 End Class

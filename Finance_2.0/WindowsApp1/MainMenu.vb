@@ -2,9 +2,7 @@
     Private Sub cmdLogout_Click(sender As Object, e As EventArgs) Handles cmdLogout.Click
         FirstWelcomeMenu.Show()
         Me.Close()
-        cmdAdvisor.Visible = False
-        cmdProjections.Visible = False
-        cmdAnalysis.Visible = False
+
     End Sub
 
     Private Sub CmdAccount_Click(sender As Object, e As EventArgs) Handles CmdAccount.Click
