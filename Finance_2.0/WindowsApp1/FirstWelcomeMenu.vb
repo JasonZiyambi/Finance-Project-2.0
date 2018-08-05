@@ -81,11 +81,18 @@
         For i = 0 To amountofaccounts() - 1
             If Account(i).GetUsername = Username Then
                 If Account(i).CheckPassword(Password) = True Then
-                    MainMenu.Show()
+                    'MainMenu.Show()
                     login.Hide()
                     setaccountnumber(i)
+                    setCB()
+                    If Account(AccountNumber).ROP() = 0 AndAlso Account(AccountNumber).amountofweeksreturn() = 0 AndAlso Account(AccountNumber).amountofhoursreturn() = 0 Then
+                        AccountDetails.Show()
+                        AccountDetails.CmdReturn.Enabled = False
+                        showaccountdetails()
+                    Else
+                        MainMenu.Show()
+                    End If
                     Exit For
-                Else
                     MsgBox("Password Incorrect!")
                     Exit For
                 End If
@@ -111,10 +118,10 @@
 
 
     Sub createaccount(ByVal username As String, ByVal password As String)
-        For i = 0 To 1000
-            GName(i) = Nothing
-            Price(i) = Nothing
-        Next
+        'For i = 0 To 1000
+        '    GName(i) = Nothing
+        '    Price(i) = Nothing
+        'Next
         Account(amountofaccounts()) = New Account(username, password, 0, 0, 0, 0, 0, GName, Price)
         'If checkifUsernameisUsed(NewUser.txtUserN.Text) = True Then
         '    MsgBox("That Username is already in use")
@@ -189,5 +196,20 @@
     Sub accountdetailslabel()
         AccountDetails.Label4.Text = "Welcome: " + Account(AccountNumber).GetUsername
     End Sub
+    Function outputtimetaken(ByVal price)
+        Return Math.Round((price / Account(AccountNumber).MonthlyIncome) * 4, 1)
+    End Function
+    Function hoursneeded(ByVal price As Integer)
+        Return Math.Round(price / Account(AccountNumber).ROP, 1)
+    End Function
 
+    Sub setCB()
+        MainMenu.Label3.Text = "£" & Account(AccountNumber).GetCurrentBalance()
+    End Sub
+    Sub showaccountdetails()
+        AccountDetails.txtROP.Text = Account(AccountNumber).ROP
+        AccountDetails.txtHPW.Text = Account(AccountNumber).amountofhoursreturn
+        AccountDetails.txtAOW.Text = Account(AccountNumber).amountofweeksreturn
+        AccountDetails.txtBalance.Text = Account(AccountNumber).GetCurrentBalance()
+    End Sub
 End Class

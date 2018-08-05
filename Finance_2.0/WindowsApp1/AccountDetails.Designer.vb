@@ -25,7 +25,6 @@ Partial Class AccountDetails
         Me.cmdSave = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.CmdReturn = New System.Windows.Forms.Button()
-        Me.CmdCTG = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -57,21 +56,12 @@ Partial Class AccountDetails
         '
         'CmdReturn
         '
-        Me.CmdReturn.Location = New System.Drawing.Point(242, 443)
+        Me.CmdReturn.Location = New System.Drawing.Point(242, 378)
         Me.CmdReturn.Name = "CmdReturn"
         Me.CmdReturn.Size = New System.Drawing.Size(121, 27)
         Me.CmdReturn.TabIndex = 18
         Me.CmdReturn.Text = "Return"
         Me.CmdReturn.UseVisualStyleBackColor = True
-        '
-        'CmdCTG
-        '
-        Me.CmdCTG.Location = New System.Drawing.Point(242, 394)
-        Me.CmdCTG.Name = "CmdCTG"
-        Me.CmdCTG.Size = New System.Drawing.Size(121, 27)
-        Me.CmdCTG.TabIndex = 17
-        Me.CmdCTG.Text = "Continue to Goals"
-        Me.CmdCTG.UseVisualStyleBackColor = True
         '
         'Label3
         '
@@ -145,13 +135,12 @@ Partial Class AccountDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(559, 501)
+        Me.ClientSize = New System.Drawing.Size(559, 441)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txtBalance)
         Me.Controls.Add(Me.cmdSave)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.CmdReturn)
-        Me.Controls.Add(Me.CmdCTG)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -168,7 +157,6 @@ Partial Class AccountDetails
     Friend WithEvents cmdSave As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents CmdReturn As Button
-    Friend WithEvents CmdCTG As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label

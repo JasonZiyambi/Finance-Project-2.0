@@ -19,9 +19,14 @@
 
             Me.Hide()
             MainMenu.Show()
+            Advisor.ComboBox1.Items.Clear()
         Else
             MsgBox("Please Ensure Passwords Match")
         End If
+
+    End Sub
+
+    Private Sub NewUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
     'Private Sub savetofile()

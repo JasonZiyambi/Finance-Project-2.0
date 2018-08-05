@@ -3,7 +3,7 @@
 
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
-        '<<<<<<< HEAD
+
         'For i = 0 To FirstWelcomeMenu.getgoalsmaxlength
         '    If ComboBox1.SelectedItem =  Then
         '        txtAmount.Text = 
@@ -11,7 +11,6 @@
         'Next
         '=======
         FirstWelcomeMenu.comboboxchanged(ComboBox1.SelectedItem)
-'>>>>>>> fe781e22dd8d7d895a47e86fe02eed5d7a443e1d
     End Sub
 
     Private Sub Advisor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -19,7 +18,7 @@
     End Sub
 
     Private Sub cmdBack_Click(sender As Object, e As EventArgs) Handles cmdBack.Click
-        AccountDetails.Show()
+        MainMenu.Show()
         Me.Close()
         ComboBox1.Items.Clear()
 
@@ -29,7 +28,21 @@
 
     End Sub
 
+<<<<<<< HEAD
     Private Sub Label4_Click(sender As Object, e As EventArgs)
 
+=======
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Try
+            MsgBox("Weeks: " & FirstWelcomeMenu.outputtimetaken(CDbl(txtAmount.Text)))
+        Catch
+        End Try
+    End Sub
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Try
+            MsgBox("You need to work " & FirstWelcomeMenu.hoursneeded(CDbl(txtAmount.Text)) & " Hours")
+        Catch
+        End Try
+>>>>>>> 63f230470663d1af422391eccae2358d6677bb58
     End Sub
 End Class
