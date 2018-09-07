@@ -33,11 +33,13 @@ Partial Class AccountDetails
         Me.txtROP = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtBalance = New System.Windows.Forms.TextBox()
+        Me.cmdInc = New System.Windows.Forms.Button()
+        Me.cmdEx = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'cmdSave
         '
-        Me.cmdSave.Location = New System.Drawing.Point(242, 345)
+        Me.cmdSave.Location = New System.Drawing.Point(242, 327)
         Me.cmdSave.Name = "cmdSave"
         Me.cmdSave.Size = New System.Drawing.Size(121, 27)
         Me.cmdSave.TabIndex = 20
@@ -56,7 +58,7 @@ Partial Class AccountDetails
         '
         'CmdReturn
         '
-        Me.CmdReturn.Location = New System.Drawing.Point(242, 378)
+        Me.CmdReturn.Location = New System.Drawing.Point(242, 426)
         Me.CmdReturn.Name = "CmdReturn"
         Me.CmdReturn.Size = New System.Drawing.Size(121, 27)
         Me.CmdReturn.TabIndex = 18
@@ -131,11 +133,31 @@ Partial Class AccountDetails
         Me.txtBalance.Size = New System.Drawing.Size(100, 20)
         Me.txtBalance.TabIndex = 21
         '
+        'cmdInc
+        '
+        Me.cmdInc.Location = New System.Drawing.Point(242, 360)
+        Me.cmdInc.Name = "cmdInc"
+        Me.cmdInc.Size = New System.Drawing.Size(121, 27)
+        Me.cmdInc.TabIndex = 24
+        Me.cmdInc.Text = "Income"
+        Me.cmdInc.UseVisualStyleBackColor = True
+        '
+        'cmdEx
+        '
+        Me.cmdEx.Location = New System.Drawing.Point(242, 393)
+        Me.cmdEx.Name = "cmdEx"
+        Me.cmdEx.Size = New System.Drawing.Size(121, 27)
+        Me.cmdEx.TabIndex = 23
+        Me.cmdEx.Text = "Expenditure"
+        Me.cmdEx.UseVisualStyleBackColor = True
+        '
         'AccountDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(559, 441)
+        Me.ClientSize = New System.Drawing.Size(559, 493)
+        Me.Controls.Add(Me.cmdInc)
+        Me.Controls.Add(Me.cmdEx)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txtBalance)
         Me.Controls.Add(Me.cmdSave)
@@ -165,4 +187,6 @@ Partial Class AccountDetails
     Friend WithEvents txtROP As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents txtBalance As TextBox
+    Friend WithEvents cmdInc As Button
+    Friend WithEvents cmdEx As Button
 End Class

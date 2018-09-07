@@ -1,7 +1,6 @@
 ﻿Public Class FirstWelcomeMenu
     Private Account(1000) As Account
     Public AccountNumber As Integer
-
     Private goals(1000) As record
     Structure record
         Dim Username As String
@@ -174,7 +173,34 @@
         SavetoGoalfile()
     End Sub
 
+    Sub createTransaction(ByVal Price As String)
+        Account(AccountNumber).Addtransaction(Price)
 
+        SavetoTransactionfile()
+    End Sub
+
+
+    Sub SavetoTransactionfile()
+        Dim data As String = Nothing
+        For accountNo = 0 To amountofaccounts() - 1
+            For i As Integer = 0 To 1000
+                Try
+                    If Account(accountNo).TransOutput(i) <> Account(accountNo).GetUsername & "0" Then
+                        Dim oneline As String = Account(accountNo).TransOutput(i)
+                        data = data & oneline
+                        MsgBox(oneline)
+
+                    End If
+                Catch
+                    Exit For
+                End Try
+            Next
+
+        Next
+        Dim File = My.Computer.FileSystem.OpenTextFileWriter(Filename3, False)
+        File.Write(data)
+        File.Close()
+    End Sub
 
     Sub Combobox()
         For i = 0 To Account(AccountNumber).getgoalsmaxlength()
@@ -212,4 +238,5 @@
         AccountDetails.txtAOW.Text = Account(AccountNumber).amountofweeksreturn
         AccountDetails.txtBalance.Text = Account(AccountNumber).GetCurrentBalance()
     End Sub
+
 End Class

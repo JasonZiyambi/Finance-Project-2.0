@@ -1,6 +1,12 @@
 ﻿Public Class Account
 #Region "Variables"
     Private goals(1000) As record
+    Private transaction(1000) As TransRecord
+
+    Structure TransRecord
+        Dim amount As Double
+    End Structure
+
     Structure record
         Dim name As String
         Dim Price As Double
@@ -10,6 +16,7 @@
     Private HoursPerWeek As Double
     Private AmountOfWeeks As Integer
     Private Expenditure As Double
+    Private income As Double
     Private CurrentBalance As Double
     Private Username As String
     Private Password As String
@@ -79,6 +86,22 @@
         goals(Amount).name = name
         goals(Amount).Price = price
     End Sub
+
+    Function amountoftransactions()
+        For i = 0 To transaction.Length - 1
+            If TransOutput(i) = Nothing Then Return i
+        Next
+        'Return 1000
+    End Function
+    Sub Addtransaction(ByVal amount As Double)
+        Dim x As Integer = amountoftransactions()
+        transaction(x).amount = amount
+    End Sub
+
+    Function TransOutput(ByVal transNo As Integer)
+        Return Me.GetUsername() & "," & transaction(transNo).amount & ";"
+    End Function
+
     Function GoalOutput(ByVal goalnumber As Integer)
         Return Me.GetUsername & "," & goals(goalnumber).name & "," & goals(goalnumber).Price & ";"
     End Function

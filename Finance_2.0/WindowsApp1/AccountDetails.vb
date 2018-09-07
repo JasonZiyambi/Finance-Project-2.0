@@ -27,4 +27,13 @@
         FirstWelcomeMenu.accountdetailslabel()
     End Sub
 
+    Private Sub cmdInc_Click(sender As Object, e As EventArgs) Handles cmdInc.Click
+        Income.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub cmdEx_Click(sender As Object, e As EventArgs) Handles cmdEx.Click
+        Expenditure.Show()
+        Me.Close()
+    End Sub
 End Class
