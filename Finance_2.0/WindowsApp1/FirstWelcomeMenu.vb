@@ -185,7 +185,7 @@
         For accountNo = 0 To amountofaccounts() - 1
             For i As Integer = 0 To 1000
                 Try
-                    If Account(accountNo).TransOutput(i) <> Account(accountNo).GetUsername & "0" Then
+                    If Account(accountNo).TransOutput(i) <> Account(accountNo).GetUsername & ",0;" Then
                         Dim oneline As String = Account(accountNo).TransOutput(i)
                         data = data & oneline
                         MsgBox(oneline)
@@ -200,6 +200,7 @@
         Dim File = My.Computer.FileSystem.OpenTextFileWriter(Filename3, False)
         File.Write(data)
         File.Close()
+        'MainMenu.Label3.Text = "£" & Account(AccountNumber).GetCurrentBalance() + 
     End Sub
 
     Sub Combobox()
