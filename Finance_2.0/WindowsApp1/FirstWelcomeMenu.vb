@@ -2,6 +2,11 @@
     Private Account(1000) As Account
     Public AccountNumber As Integer
     Private goals(1000) As record
+    Private transactions(1000) As transrecord
+    Structure transrecord
+        Dim Username As String
+        Dim amount As Double
+    End Structure
     Structure record
         Dim Username As String
         Dim name As String
@@ -9,6 +14,9 @@
     End Structure
     Dim Gname As New List(Of String)
     Dim Price As New List(Of Double)
+
+    Dim TUsername As New List(Of String)
+    Dim Tamount As New List(Of Double)
 
 
     'Sub settingarraytonothing()
@@ -20,6 +28,19 @@
     'End Sub
 
     Sub LoadFromFile()
+
+
+
+        Dim file3 = My.Computer.FileSystem.ReadAllText(Filename3), Record3() As String = file3.Split(";")
+        For NumofUsers = 0 To Record3.Length - 1
+            If Record3(NumofUsers) <> Nothing Then
+                Dim items() As String = Record3(NumofUsers).Split(",")
+                transactions(NumofUsers).Username = items(0)
+                transactions(NumofUsers).amount = items(1)
+            End If
+        Next
+
+
         Dim file2 = My.Computer.FileSystem.ReadAllText(filename2), Record2() As String = file2.Split(";")
         For NumofUsers = 0 To Record2.Length - 1
             If Record2(NumofUsers) <> Nothing Then
@@ -35,16 +56,25 @@
         For NumofUsers = 0 To Record.Length - 1
             If Record(NumofUsers) <> Nothing Then
                 Dim items() As String = Record(NumofUsers).Split(",")
-                For i = 0 To 1000
+                For i = 0 To goals.Length - 1
                     If goals(i).Username = items(0) Then
                         Gname.Add(goals(i).name)
                         Price.Add(goals(i).Price)
                     End If
                 Next
-                Account(NumofUsers) = New Account(items(0), items(1), items(2), items(3), items(4), items(5), items(6), Gname, Price)
+                For i = 0 To transactions.Length - 1
+                    If transactions(i).Username = items(0) Then
+                        TUsername.Add(transactions(i).Username)
+                        Tamount.Add(transactions(i).amount)
+                    End If
+                Next
+                Account(NumofUsers) = New Account(items(0), items(1), items(2), items(3), items(4), items(5), items(6), Gname, Price, TUsername, Tamount)
             End If
             Gname.Clear()
             Price.Clear()
+
+            TUsername.Clear()
+            Tamount.Clear()
         Next
 
 
@@ -121,7 +151,7 @@
         '    GName(i) = Nothing
         '    Price(i) = Nothing
         'Next
-        Account(amountofaccounts()) = New Account(username, password, 0, 0, 0, 0, 0, GName, Price)
+        Account(amountofaccounts()) = New Account(username, password, 0, 0, 0, 0, 0, Gname, Price, TUsername, Tamount)
         'If checkifUsernameisUsed(NewUser.txtUserN.Text) = True Then
         '    MsgBox("That Username is already in use")
 
@@ -240,4 +270,14 @@
         AccountDetails.txtBalance.Text = Account(AccountNumber).GetCurrentBalance()
     End Sub
 
+    Sub createchart()
+
+        Dim transactionlist As New List(Of Double)
+        For i = 0 To Account(AccountNumber).amountoftransactions - 1
+            transactionlist.Add(Account(AccountNumber).transactionoutput(i))
+        Next
+
+        Analysis.chart(transactionlist)
+        Analysis.Show()
+    End Sub
 End Class

@@ -7,7 +7,7 @@
 
     Private Sub CmdAccount_Click(sender As Object, e As EventArgs) Handles CmdAccount.Click
         AccountDetails.Show()
-        Me.Hide()
+        Me.Close()
         FirstWelcomeMenu.showaccountdetails()
     End Sub
 
@@ -26,6 +26,10 @@
     End Sub
 
     Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FirstWelcomeMenu.setCB()
+    End Sub
 
+    Private Sub cmdAnalysis_Click(sender As Object, e As EventArgs) Handles cmdAnalysis.Click
+        FirstWelcomeMenu.createchart()
     End Sub
 End Class

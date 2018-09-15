@@ -4,9 +4,9 @@
     Private transaction(1000) As TransRecord
 
     Structure TransRecord
+        Dim Username As String
         Dim amount As Double
     End Structure
-
     Structure record
         Dim name As String
         Dim Price As Double
@@ -22,7 +22,7 @@
     Private Password As String
 #End Region
 #Region "Constructor"
-    Public Sub New(ByVal Username As String, ByVal Password As String, ByVal Rateofpay As Integer, ByVal HoursPerWeek As Integer, AmountOfWeeks As Integer, Expenditure As String, CurrentBalance As Integer, name As List(Of String), price As List(Of Double))
+    Public Sub New(ByVal Username As String, ByVal Password As String, ByVal Rateofpay As Integer, ByVal HoursPerWeek As Integer, AmountOfWeeks As Integer, Expenditure As String, CurrentBalance As Integer, name As List(Of String), price As List(Of Double), Tusernames As List(Of String), Tamounts As List(Of Double))
         ' This call is required by the designer.
         ' InitializeComponent()
         Me.Username = Username
@@ -38,6 +38,11 @@
             Me.goals(i).name = name.Item(i)
         Next
 
+        For i = 0 To Tusernames.Count - 1
+            Me.transaction(i).Username = Tusernames.Item(i)
+            Me.transaction(i).amount = Tamounts.Item(i)
+
+        Next
     End Sub
 #End Region
 #Region "Functions"
@@ -49,7 +54,7 @@
     End Function
 
     Function GetCurrentBalance()
-        Return Me.CurrentBalance
+        Return outputCB()
     End Function
 
     Function CheckPassword(ByVal Password As String)
@@ -89,7 +94,7 @@
 
     Function amountoftransactions()
         For i = 0 To transaction.Length - 1
-            If TransOutput(i) = Nothing Then Return i
+            If TransOutput(i) = Me.GetUsername & ",0;" Then Return i
         Next
         'Return 1000
     End Function
@@ -101,7 +106,6 @@
     Function TransOutput(ByVal transNo As Integer)
         Return Me.GetUsername() & "," & transaction(transNo).amount & ";"
     End Function
-
     Function GoalOutput(ByVal goalnumber As Integer)
         Return Me.GetUsername & "," & goals(goalnumber).name & "," & goals(goalnumber).Price & ";"
     End Function
@@ -124,6 +128,17 @@
     End Function
     Function amountofhoursreturn()
         Return Me.HoursPerWeek
+    End Function
+    Function outputCB()
+        Dim CurrentBalance As Integer = Nothing
+        For i = 0 To amountoftransactions()
+            CurrentBalance += transaction(i).amount
+        Next
+        setCurrentBalance(CurrentBalance)
+        Return CurrentBalance
+    End Function
+    Function transactionoutput(number As Integer)
+        Return transaction(number).amount
     End Function
 #End Region
 End Class
